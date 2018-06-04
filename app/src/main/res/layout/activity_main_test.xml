@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colotTlo"
+    tools:context=".MainTest">
+
+    <TextView
+        android:id="@+id/tekstTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="320dp"
+        android:text="Twoje imie to :"
+        android:textColor="@color/colorRejestruj"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/imie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="4"
+        android:inputType="textPersonName"
+        android:text="Imie"
+        android:textColor="@color/colorLogo"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tekstTest"
+        app:layout_constraintStart_toEndOf="@+id/tekstTest"
+        app:layout_constraintTop_toTopOf="@+id/tekstTest" />
+
+    <Button
+        android:id="@+id/test1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="208dp"
+        android:text="Test nr. 1"
+        android:onClick="test1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/test2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="test2"
+        android:text="Test nr. 2"
+        app:layout_constraintStart_toStartOf="@+id/test1"
+        app:layout_constraintTop_toBottomOf="@+id/test1"/>
+
+    <Button
+        android:id="@+id/zapisz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="zapisz"
+        android:text="Zapisz swoje wyniki"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/test2" />
+
+</android.support.constraint.ConstraintLayout>
