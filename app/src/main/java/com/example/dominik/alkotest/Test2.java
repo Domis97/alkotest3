@@ -2,6 +2,7 @@ package com.example.dominik.alkotest;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Random;
 import java.util.ArrayList;
+
+import static java.lang.Thread.sleep;
 
 
 public class Test2 extends AppCompatActivity {
@@ -32,6 +35,11 @@ public class Test2 extends AppCompatActivity {
             if (clickedButtonID == randomButton) {
                 clickedButtonID.setBackgroundResource(R.drawable.buttonshape);
                 test2Gra.setWaitingForClick(false);
+            }
+            try {
+                sleep(100); //zeby nie wywalo przed zakonczeniem watkow
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
             TextView textView = findViewById(R.id.wynik);
             textView.setText(test2Gra.getShow());
@@ -89,7 +97,17 @@ public class Test2 extends AppCompatActivity {
         this.waitingTime = waitingTime;
     }
 
-    public void finishGame() {
+    public void finishGame(String kaka) {
+
+        Intent intent = new Intent();
+        intent.putExtra("someValue", kaka);
+        setResult(RESULT_OK, intent);
+
+        try {
+            sleep(50);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         Test2.this.runOnUiThread(new Runnable() {
             @Override
@@ -97,6 +115,8 @@ public class Test2 extends AppCompatActivity {
                 finish();
             }
         });
+
+
     }
 
 

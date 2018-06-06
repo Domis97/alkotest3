@@ -39,7 +39,7 @@ public class Test2Gra extends Thread {
             help = help + waitingTime;
         }
 
-        test2.finishGame();
+        test2.finishGame(getsTime());
     }
 
 
@@ -66,9 +66,6 @@ public class Test2Gra extends Thread {
         this.waitingForClick = waitingForClick;
     }
 
-    public long getWaitingTime() {
-        return waitingTime;
-    }
 
     public void setWaitingTime(long waitingTime) {
         this.waitingTime = waitingTime;
