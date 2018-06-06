@@ -13,12 +13,11 @@
         android:layout_height="wrap_content"
         android:text="@string/czas"
         android:textColor="@color/colorRejestruj"
-        android:textSize="40sp"
-        android:layout_marginBottom="180dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="@+id/button5"
+        app:layout_constraintStart_toStartOf="@+id/button4"
+        app:layout_constraintTop_toTopOf="@+id/button4" />
 
     <Button
         android:id="@+id/button1"

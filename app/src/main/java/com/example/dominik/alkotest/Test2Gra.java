@@ -9,9 +9,9 @@ public class Test2Gra extends Thread {
     volatile private boolean waitingForClick;
     private Thread waitingThread;
     private long waitingTime;
-    private String show;
+    String show;
     private long help;
-    private String sTime;
+    String sTime;
     private long avg;
     private Test2 test2;
 
