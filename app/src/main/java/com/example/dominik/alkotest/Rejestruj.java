@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -36,9 +37,9 @@ public class Rejestruj extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 zapisz();
-
             }
         });
+
     }
 
     public void test1(View view) {
@@ -61,9 +62,10 @@ public class Rejestruj extends AppCompatActivity {
 
     public void zapisz() {
 
-        File file = new File(getApplicationContext().getFilesDir(), "time.txt");
+        EditText editText = findViewById(R.id.imie);
+        String text = editText.getText().toString();
 
-        String filename = "Kozak";
+        String filename = text;
         String fileContents = value;
         FileOutputStream outputStream;
 

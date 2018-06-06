@@ -12,12 +12,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="320dp"
-        android:text="Podaj nam swoje imie :"
+        android:text="@string/podaj_imie"
         android:textColor="@color/colorRejestruj"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/imie"
@@ -28,9 +28,9 @@
         android:layout_marginTop="8dp"
         android:ems="4"
         android:inputType="textPersonName"
-        android:text="Imie"
+        android:hint="@string/imie"
         android:textColor="@color/colorLogo"
-        android:textSize="25dp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="@+id/tekstlog"
         app:layout_constraintStart_toEndOf="@+id/tekstlog"
         app:layout_constraintTop_toTopOf="@+id/tekstlog" />
@@ -40,8 +40,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="208dp"
-        android:text="Test nr. 1"
         android:onClick="test1"
+        android:text="Test nr. 1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +56,7 @@
         android:onClick="test2"
         android:text="Test nr. 2"
         app:layout_constraintStart_toStartOf="@+id/test1"
-        app:layout_constraintTop_toBottomOf="@+id/test1"/>
+        app:layout_constraintTop_toBottomOf="@+id/test1" />
 
     <Button
         android:id="@+id/zapisz"
