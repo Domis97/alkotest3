@@ -11,9 +11,9 @@
         android:id="@+id/wynik"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="cosocos"
+        android:text="@string/czas"
         android:textColor="@color/colorRejestruj"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:layout_marginBottom="180dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -27,7 +27,6 @@
         android:layout_width="125dp"
         android:layout_height="125dp"
         android:background="@drawable/buttonshape"
-        android:onClick="kolor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

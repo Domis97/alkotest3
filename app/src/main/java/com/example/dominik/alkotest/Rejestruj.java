@@ -1,14 +1,19 @@
 package com.example.dominik.alkotest;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import java.io.File;
+import java.io.FileOutputStream;
 
 public class Rejestruj extends AppCompatActivity {
 
     String Imie;
-
+    private Test2Gra test2Gra;
     public String getImie() {
         return Imie;
     }
@@ -35,7 +40,30 @@ public class Rejestruj extends AppCompatActivity {
     }
 
     public void zapisz(View view){
-        android.widget.Button Act1button = (Button)findViewById(R.id.zapisz);
+        Button save = findViewById(R.id.zapisz);
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                File file = new File(getApplicationContext().getFilesDir(), "time.txt");
+
+                String filename = "Kozak";
+                String fileContents = test2Gra.getsTime();
+                FileOutputStream outputStream;
+
+                try {
+                    outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+                    outputStream.write(fileContents.getBytes());
+                    outputStream.close();
+                    Log.v("Test2", "Do pliku " + test2Gra.getsTime());
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Log.e("Test2", "Nie dziala zapis");
+                }
+
+            }
+        });
 
     }
 }

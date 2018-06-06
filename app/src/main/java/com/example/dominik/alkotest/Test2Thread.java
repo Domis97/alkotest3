@@ -1,5 +1,7 @@
 package com.example.dominik.alkotest;
 
+import android.util.Log;
+
 public class Test2Thread extends Thread {
 
 
@@ -7,7 +9,8 @@ public class Test2Thread extends Thread {
     volatile private long mStart;
     volatile private long mEnd;
 
-    public Test2Thread(Test2Gra temp) {
+
+    Test2Thread(Test2Gra temp) {
         this.temp = temp;
     }
 
@@ -17,6 +20,7 @@ public class Test2Thread extends Thread {
         while (temp.isWaitingForClick()) {}
         mEnd = System.currentTimeMillis();
         long value = mEnd - mStart;
+        Log.v("TEST 2 Thread", "Zwrocona wartosc " + value);
         temp.setWaitingTime(value);
     }
 

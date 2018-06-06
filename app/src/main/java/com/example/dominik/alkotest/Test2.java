@@ -23,17 +23,19 @@ public class Test2 extends AppCompatActivity {
     private Button randomButton;
     private ArrayList<Button> buttonArrayList;
     volatile private long waitingTime;
-    long time;
-    Rejestruj rejestruj;
 
-    private View.OnClickListener clicker = new View.OnClickListener(){
+
+    private View.OnClickListener clicker = new View.OnClickListener() {
         @Override
-        public void onClick (View v){
+        public void onClick(View v) {
             Button clickedButtonID = findViewById(v.getId());
-            if(clickedButtonID==randomButton){
+            if (clickedButtonID == randomButton) {
                 clickedButtonID.setBackgroundResource(R.drawable.buttonshape);
                 test2Gra.setWaitingForClick(false);
             }
+            TextView textView = findViewById(R.id.wynik);
+            textView.setText(test2Gra.getShow());
+
         }
 
     };
@@ -43,7 +45,7 @@ public class Test2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test2);
 
-        randomGenerator=new Random();
+        randomGenerator = new Random();
         buttonArrayList = new ArrayList<>();
 
         buttonArrayList.add((Button) findViewById(R.id.button1));
@@ -56,20 +58,19 @@ public class Test2 extends AppCompatActivity {
         buttonArrayList.add((Button) findViewById(R.id.button8));
         buttonArrayList.add((Button) findViewById(R.id.button9));
 
-        for(int i = 0; i < 9; i++) {
+        for (int i = 0; i < 9; i++) {
             buttonArrayList.get(i).setOnClickListener(clicker);
         }
 
         runGame();
 
 
-
     }
 
-    public void chooseRandomButton(){
+    public void chooseRandomButton() {
         int choosenButtonIndex = randomGenerator.nextInt(buttonArrayList.size());
         randomButton = buttonArrayList.get(choosenButtonIndex);
-        Test2.this.runOnUiThread(new Runnable(){
+        Test2.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 randomButton.setBackgroundResource(R.drawable.target);
@@ -78,47 +79,24 @@ public class Test2 extends AppCompatActivity {
 
     }
 
-    public void runGame()  {
-        test2Gra=new Test2Gra(this);
+    public void runGame() {
+        test2Gra = new Test2Gra(this);
         test2Gra.start();
     }
 
-    public long getWaitingTime() {
-        return waitingTime;
-    }
 
     public void setWaitingTime(long waitingTime) {
         this.waitingTime = waitingTime;
     }
 
-    public void finishGame(){
+    public void finishGame() {
 
-        Test2.this.runOnUiThread(new Runnable(){
+        Test2.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 finish();
             }
         });
-
-        File file = new File(getApplicationContext().getFilesDir(), "time.txt");
-
-        String filename = "Kozak";
-        String fileContents = test2Gra.getsTime();
-        FileOutputStream outputStream;
-
-        try {
-            outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
-            outputStream.write(fileContents.getBytes());
-            outputStream.close();
-            Log.v("Test2",test2Gra.getsTime());
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.e("Test2","Nie dziala");
-        }
-
-
-
     }
 
 

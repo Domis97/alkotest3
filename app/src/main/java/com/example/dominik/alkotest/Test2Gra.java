@@ -1,32 +1,31 @@
 package com.example.dominik.alkotest;
-//Write to file to problem nie wiadomo jak to ma działac i czym jest context
-import android.content.Context;
-import android.util.Log;
+
 
 
 public class Test2Gra extends Thread {
 
 
-    private static final int ILOSCPROB=5;
+    private static final int ILOSCPROB = 5;
     volatile private boolean waitingForClick;
     private Thread waitingThread;
     private long waitingTime;
-    String sTime;
+    private String show;
+    private long help;
+    private String sTime;
+    private long avg;
+    private Test2 test2;
 
     public String getsTime() {
+        avg = help / 5;
+        sTime = Long.toString((avg));
         return sTime;
     }
 
-    public long[] getSaveWaitingTime() {
-        return saveWaitingTime;
+    public String getShow() {
+        show = Long.toString((waitingTime));
+        return show;
     }
 
-    public void setSaveWaitingTime(long[] saveWaitingTime) {
-        this.saveWaitingTime = saveWaitingTime;
-    }
-
-    private long [] saveWaitingTime = new long[ILOSCPROB];
-    private Test2 test2;
 
     public Test2Gra(Test2 test2) {
         this.test2 = test2;
@@ -37,17 +36,14 @@ public class Test2Gra extends Thread {
         for (int i = 0; i < ILOSCPROB; i++) {
             test2.chooseRandomButton();
             runWaitingThread();
-            saveWaitingTime[i]=waitingTime;
-            Log.v("TEST 2 GRA", "Zwrocona wartosc " + saveWaitingTime[i]);
-            sTime = Long.toString((waitingTime));
+            help = help + waitingTime;
         }
 
         test2.finishGame();
     }
 
 
-
-    public void runWaitingThread() {
+    private void runWaitingThread() {
         waitingForClick = true;
         waitingThread = new Test2Thread(this);
         waitingThread.start();
