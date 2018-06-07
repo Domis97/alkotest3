@@ -3,7 +3,6 @@ package com.example.dominik.alkotest;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void loguj(View view) {
 
-                        android.content.Intent myIntent = new android.content.Intent(view.getContext(), Loguj.class);
+        android.content.Intent myIntent = new android.content.Intent(view.getContext(), TestPo.class);
                         startActivity(myIntent);
 
     }

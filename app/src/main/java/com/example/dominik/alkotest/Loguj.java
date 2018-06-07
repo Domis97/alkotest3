@@ -3,6 +3,7 @@ package com.example.dominik.alkotest;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,20 +22,40 @@ import java.util.List;
 public class Loguj extends AppCompatActivity {
 
     String wybor;
+    String wynik1;
+    String wynik2;
+    private long wynik1L;
+    private long wynik2L;
+    private long wynik;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loguj);
-        Button button = findViewById(R.id.profilx);
+
+
+        Bundle temp = getIntent().getExtras();//przekazani wynik2
+        if (temp != null) {
+            wynik2 = (String) temp.get("wartosc");
+            wynik2L = Long.valueOf(wynik2);
+        }
+
+        Button button = findViewById(R.id.porownaj);
         spinner();
         button.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         profil();
-                        //TODO:resjetruj zamienica na logowanie
-//                        Intent myIntent = new Intent(v.getContext(), Rejestruj.class);
-//                        startActivity(myIntent);
+                        wynik1L = Long.valueOf(wynik1);
+                        wynik = wynik2L - wynik1L;
+                        TextView textView = findViewById(R.id.wynik_koncowy);
+                        if (wynik > 400) {
+                            textView.setText(String.valueOf("Jak Adas na pikniku"));
+                        } else if (wynik > 250) {
+                            textView.setText(String.valueOf("Jak Domis po 100ml"));
+                        } else {
+                            textView.setText(String.valueOf("Trzezwy jak KaKa"));
+                        }
                     }
                 }
         );
@@ -71,14 +92,15 @@ public class Loguj extends AppCompatActivity {
     public void profil() {
 
 
-
         try {
             FileInputStream fileInputStream = openFileInput(wybor);
             BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream));
-            String str = br.readLine();
+            wynik1 = br.readLine();
             TextView textView = findViewById(R.id.wynik_text);
-            textView.setText(str);
+            textView.setText(wynik1);
             br.close();
+            TextView textView1 = findViewById(R.id.wynik_Po);
+            textView1.setText(wynik2);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -8,48 +8,34 @@
     tools:context=".Test1">
 
     <TextView
-        android:id="@+id/kupa"
+        android:id="@+id/xText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Nakurwiam test1!"
-        android:textColor="@color/colorLogo"
-        android:textSize="45dp"
+        android:text="X"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="X"
-        android:id="@+id/xText"
-        android:layout_marginTop="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Y"
         android:id="@+id/yText"
-        android:layout_marginTop="80dp"
-        app:layout_constraintLeft_toLeftOf="@+id/xText"
-        app:layout_constraintTop_toTopOf="@+id/xText"/>
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Z"
-        android:id="@+id/zText"
         android:layout_marginTop="80dp"
+        android:text="Y"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        app:layout_constraintLeft_toLeftOf="@+id/xText"
+        app:layout_constraintTop_toTopOf="@+id/xText" />
+
+    <TextView
+        android:id="@+id/zText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Z"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         app:layout_constraintLeft_toLeftOf="@+id/yText"
-        app:layout_constraintTop_toTopOf="@+id/yText"/>
+        app:layout_constraintTop_toTopOf="@+id/yText" />
 
 </android.support.constraint.ConstraintLayout>
