@@ -6,6 +6,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
+import android.util.Log;
 import android.widget.TextView;
 
 
@@ -13,10 +14,11 @@ import android.widget.TextView;
 
 public class Test1 extends AppCompatActivity implements SensorEventListener{
 
-    private float xText, yText, zText;
+    private float xText, yText, zText, xValue, yValue, zValue, xValueAvg, yValueAvg, zValueAvg;
     private Sensor mySensor;
     private SensorManager SM;
     private float tab[];
+    private long i;
 
 
     @Override
@@ -42,9 +44,17 @@ public class Test1 extends AppCompatActivity implements SensorEventListener{
 
     @Override
     public void onSensorChanged(SensorEvent event) {
+        i++;
+        Log.v("Test1", "Ilosc wartosci to: " + Long.toString(i));
         xText = event.values[0];
+        xValue = xValue + xText;
+        xValueAvg = xValue / i;
         yText = event.values[1];
+        yValue = yValue + yText;
+        yValueAvg = yValue / i;
         zText = event.values[2];
+        zValue = zValue + zText;
+        zValueAvg = zValue / i;
     }
 
 }
