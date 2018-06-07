@@ -7,13 +7,18 @@ public class Test2Gra extends Thread {
 
     private static final int ILOSCPROB = 5;
     volatile private boolean waitingForClick;
-    private Thread waitingThread;
     private long waitingTime;
-    String show;
+    private String show;
     private long help;
-    String sTime;
+    private String sTime;
     private long avg;
     private Test2 test2;
+    volatile private long mStart;
+    volatile private long mEnd;
+
+    public Test2Gra(Test2 test2) {
+        this.test2 = test2;
+    }
 
     public String getsTime() {
         avg = help / 5;
@@ -24,11 +29,6 @@ public class Test2Gra extends Thread {
     public String getShow() {
         show = Long.toString((waitingTime));
         return show;
-    }
-
-
-    public Test2Gra(Test2 test2) {
-        this.test2 = test2;
     }
 
     @Override
@@ -45,15 +45,13 @@ public class Test2Gra extends Thread {
 
     private void runWaitingThread() {
         waitingForClick = true;
-        waitingThread = new Test2Thread(this);
-        waitingThread.start();
-        try {
-            waitingThread.join();
-            test2.setWaitingTime(waitingTime);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        mStart = System.currentTimeMillis();
+        while (waitingForClick) {
         }
+        mEnd = System.currentTimeMillis();
+        waitingTime = mEnd - mStart;
         test2.setWaitingTime(waitingTime);
+
 
     }
 
@@ -66,8 +64,4 @@ public class Test2Gra extends Thread {
         this.waitingForClick = waitingForClick;
     }
 
-
-    public void setWaitingTime(long waitingTime) {
-        this.waitingTime = waitingTime;
-    }
 }
