@@ -97,10 +97,10 @@ public class Loguj extends AppCompatActivity {
             BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream));
             wynik1 = br.readLine();
             TextView textView = findViewById(R.id.wynik_text);
-            textView.setText(wynik1);
+            textView.setText("Wynik 1 to: " + wynik1);
             br.close();
             TextView textView1 = findViewById(R.id.wynik_Po);
-            textView1.setText(wynik2);
+            textView1.setText("Wynik 2 to: " + wynik2);
         } catch (IOException e) {
             e.printStackTrace();
         }

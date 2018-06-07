@@ -20,7 +20,8 @@
         <activity android:name=".Rejestruj" />
         <activity android:name=".Test1" />
         <activity android:name=".Test2" />
-        <activity android:name=".TestPo"></activity>
+        <activity android:name=".TestPo" />
+        <activity android:name=".Usun"></activity>
     </application>
 
 </manifest>

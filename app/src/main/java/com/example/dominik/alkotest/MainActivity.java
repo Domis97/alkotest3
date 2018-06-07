@@ -15,8 +15,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void rejestruj(View view) {
 
-                        android.content.Intent myIntent = new android.content.Intent(view.getContext(), Rejestruj.class);
-                        startActivity(myIntent);
+        android.content.Intent myIntent = new android.content.Intent(view.getContext(), Rejestruj.class);
+        startActivity(myIntent);
 
 
     }
@@ -24,7 +24,14 @@ public class MainActivity extends AppCompatActivity {
     public void loguj(View view) {
 
         android.content.Intent myIntent = new android.content.Intent(view.getContext(), TestPo.class);
-                        startActivity(myIntent);
+        startActivity(myIntent);
+
+    }
+
+    public void usun(View view) {
+
+        android.content.Intent myIntent = new android.content.Intent(view.getContext(), Usun.class);
+        startActivity(myIntent);
 
     }
 
