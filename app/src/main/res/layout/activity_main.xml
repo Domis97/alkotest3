@@ -1,20 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/logoBackground">
+    android:background="@color/colotTlo"
+    tools:context=".MainActivity">
 
-    <ImageView
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Witaj w Alkotest!"
+        android:textColor="@color/colorLogo"
+        android:textSize="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/usun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorLogo"
+        android:onClick="usun"
+        android:text="Usun konto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/logo"
-        android:adjustViewBounds="true"
+        app:layout_constraintTop_toBottomOf="@id/rejestruj" />
 
-        />
+    <Button
+        android:id="@+id/loguj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zaloguj"
+        android:onClick="loguj"
+        android:background="@color/colorLoguj"
+        app:layout_constraintBottom_toBottomOf="@id/rejestruj"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textView" />
+
+    <Button
+        android:id="@+id/rejestruj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nowe konto"
+        android:onClick="rejestruj"
+        android:background="@color/colorRejestruj"
+        app:layout_constraintBottom_toTopOf="@id/usun"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loguj" />
+
 </android.support.constraint.ConstraintLayout>
