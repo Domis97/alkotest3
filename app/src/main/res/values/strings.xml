@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">alkotest</string>
+    <string name="welcomeMessage">Witaj w Alkotest!</string>
+    <string name="logIn">Zaloguj</string>
+    <string name="newAccount">Nowe konto</string>
     <string name="czas">Czas Reakcji</string>
     <string name="imie">Imie</string>
     <string name="podaj_imie">Podaj nam swoje imie :</string>
+    <string name="appname">ALKOTEST</string>
+    <string name="app_name">ALKOTEST</string>
 </resources>

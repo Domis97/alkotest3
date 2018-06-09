@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorLoguj">#376ec6</color>
-    <color name="colorLogo">#8699b7</color>
+    <color name="colorLogo">#474744</color>
     <color name="colorRejestruj">#a02e0b</color>
+    <color name="backgroundColor">#fec100</color>
     <color name="colotTlo">#202060</color>
+    <color name="logoBackground">#92C5E0</color>
 </resources>
