@@ -37,6 +37,8 @@ public class Rejestruj extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 zapisz();
+                Intent myIntent = new Intent(v.getContext(), HomeActivity.class);
+                startActivity(myIntent);
             }
         });
 
@@ -79,6 +81,8 @@ public class Rejestruj extends AppCompatActivity {
             e.printStackTrace();
             Log.e("Test2", "Nie dziala zapis");
         }
+
+
 
 
     }

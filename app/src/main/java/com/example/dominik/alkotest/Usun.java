@@ -1,5 +1,6 @@
 package com.example.dominik.alkotest;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +32,8 @@ public class Usun extends AppCompatActivity {
                     public void onClick(View v) {
                         getApplicationContext().deleteFile(wybor);
                         spinner();
+                        Intent myIntent = new Intent(v.getContext(), HomeActivity.class);
+                        startActivity(myIntent);
                     }
                 }
         );

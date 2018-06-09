@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colotTlo"
+    android:background="@color/backgroundColor"
     tools:context=".Loguj">
 
     <TextView
@@ -12,7 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="320sp"
-        android:text="Wybierz swój zapisany profil :"
+        android:text="@string/loguj_profil"
+        android:textStyle="bold"
         android:textColor="@color/colorLogo"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,22 +25,25 @@
         android:id="@+id/profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/wynik_text"
+        app:layout_constraintBottom_toTopOf="@+id/porownaj"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/porownaj" />
+        app:layout_constraintTop_toBottomOf="@+id/tekstlog"
+        />
 
 
     <Button
         android:id="@+id/porownaj"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="137dp"
+        android:layout_height="77dp"
         android:layout_marginBottom="208dp"
-        android:text="Porownaj"
+        android:text="@string/porownaj"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.68" />
 
     <TextView
         android:id="@+id/wynik_text"
@@ -47,6 +51,9 @@
         android:layout_height="wrap_content"
         android:textColor="@color/colorLogo"
         android:textSize="30sp"
+        android:layout_marginTop="100dp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -58,6 +65,8 @@
         android:layout_height="wrap_content"
         android:textColor="@color/colorLogo"
         android:textSize="30sp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
         app:layout_constraintBottom_toBottomOf="@+id/wynik_koncowy"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -67,8 +76,12 @@
         android:id="@+id/wynik_koncowy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorLogo"
-        android:textSize="40sp"
+        android:textColor="@color/colorRejestruj"
+        android:textSize="50sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

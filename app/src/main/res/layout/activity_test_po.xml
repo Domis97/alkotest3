@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colotTlo"
+    android:background="@color/backgroundColor"
     tools:context=".TestPo">
 
     <TextView
@@ -12,9 +12,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="320dp"
-        android:text="Jesli masz juz konto\n    wykonaj testy"
-        android:textColor="@color/colorRejestruj"
-        android:textSize="25sp"
+        android:text="Posiadasz konto?\n Wykonaj testy!"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/colorLogo"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -25,34 +27,44 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="208dp"
+        android:background="@drawable/buttonshape"
         android:onClick="test1"
         android:text="Test nr. 1"
+        android:textSize="23sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tekstlog" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.991" />
 
     <Button
         android:id="@+id/test2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:background="@drawable/buttonshape"
         android:onClick="test2"
         android:text="Test nr. 2"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/test1" />
+        app:layout_constraintTop_toBottomOf="parent" />
 
     <Button
         android:id="@+id/logowanie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="183dp"
+        android:layout_height="79dp"
         android:layout_marginTop="8dp"
         android:onClick="logowanie"
-        android:text="Porownaj wyniki"
+        android:text="@string/porownaj_wyniki"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/test2" />
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.252" />
 
 
 </android.support.constraint.ConstraintLayout>

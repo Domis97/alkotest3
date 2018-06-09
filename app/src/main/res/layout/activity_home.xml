@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
-    tools:context=".MainActivity">
+    tools:context=".HomeActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -37,6 +37,7 @@
         android:text="@string/newAccount"
         android:textColor="#FFFFFF"
         android:textSize="23sp"
+        android:onClick="rejestruj"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.114"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -56,6 +57,7 @@
         android:text="@string/logIn"
         android:textColor="#FFFFFF"
         android:textSize="23sp"
+        android:onClick="loguj"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.889"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -63,15 +65,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.498" />
 
-    <!--<Button-->
-    <!--android:id="@+id/rejestruj"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="48dp"-->
-    <!--android:layout_marginTop="240dp"-->
-    <!--android:background="@color/colorRejestruj"-->
-    <!--android:onClick="rejestruj"-->
-    <!--android:text="@string/newAccount"-->
-    <!--app:layout_constraintTop_toTopOf="parent"-->
-    <!--tools:layout_editor_absoluteX="243dp" />-->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:background="@drawable/buttonshape"
+        android:onClick="usun"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="@string/deleteAccount"
+        android:textColor="#FFFFFF"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.826" />
 
 </android.support.constraint.ConstraintLayout>

@@ -3,8 +3,17 @@
     <string name="logIn">Zaloguj</string>
     <string name="newAccount">Nowe konto</string>
     <string name="czas">Czas Reakcji</string>
-    <string name="imie">Imie</string>
-    <string name="podaj_imie">Podaj nam swoje imie :</string>
+    <string name="imie">Imię</string>
+    <string name="podaj_imie">Podaj swoje imię:</string>
     <string name="appname">ALKOTEST</string>
     <string name="app_name">ALKOTEST</string>
+    <string name="deleteAccount">Usuń konto</string>
+    <string name="test1">Test nr.1</string>
+    <string name="test2">Test nr. 2</string>
+    <string name="zapisz_wynik">Zapisz wynik</string>
+    <string name="wybierz_profil">Wybierz profil:</string>
+    <string name="usun_profil">Usun profil</string>
+    <string name="loguj_profil">Wybierz swój profil:</string>
+    <string name="porownaj">Porównaj</string>
+    <string name="porownaj_wyniki">Porównaj wyniki</string>
 </resources>

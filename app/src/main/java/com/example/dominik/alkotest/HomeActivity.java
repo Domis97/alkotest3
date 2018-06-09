@@ -26,4 +26,11 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(myIntent);
 
     }
+
+    public void usun(View view) {
+
+        android.content.Intent myIntent = new android.content.Intent(view.getContext(), Usun.class);
+        startActivity(myIntent);
+
+    }
 }
