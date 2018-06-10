@@ -9,8 +9,11 @@ import android.hardware.SensorEventListener;
 import android.util.Log;
 import android.widget.TextView;
 
+/**
+ * Klasa odpowiadająca za obsługę test1
+ */
 
-
+//TODO dodac timer odliczajacy czas pobierania wartosci / dodanie zamkniecia aktywnosci oraz extras na intent z wynikiem
 
 public class Test1 extends AppCompatActivity implements SensorEventListener{
 
@@ -39,8 +42,15 @@ public class Test1 extends AppCompatActivity implements SensorEventListener{
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        // Not in use
+
     }
+
+    /**
+     * pobieranie oraz sumowanie wartosci z sensorow
+     * oraz iteracja sluzaca do tego by wiedziec ile razy zmienila sie wartosc na sensorze
+     *
+     * @param event zmiana
+     */
 
     @Override
     public void onSensorChanged(SensorEvent event) {

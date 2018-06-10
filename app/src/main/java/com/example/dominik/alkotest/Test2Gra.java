@@ -1,5 +1,8 @@
 package com.example.dominik.alkotest;
 
+/**
+ * * Klasa odpowiadająca za obsługę gry w tescie2
+ */
 
 
 public class Test2Gra extends Thread {
@@ -16,20 +19,45 @@ public class Test2Gra extends Thread {
     volatile private long mStart;
     volatile private long mEnd;
 
-    public Test2Gra(Test2 test2) {
+    /**
+     * polaczenie Test2Gra z konkretnym Test2
+     *
+     * @param test2 obiekt klasy Test2
+     */
+
+    Test2Gra(Test2 test2) {
+
         this.test2 = test2;
     }
 
-    public String getsTime() {
+    /**
+     * metoda zwraca wartosc sTime w postaci String jako srednia 5
+     * porbanych wczesniej wartosci reakcji
+     *
+     * @return zwracam sredni czas reakcji
+     */
+
+    private String getsTime() {
         avg = help / 5;
         sTime = Long.toString((avg));
         return sTime;
     }
 
+    /**
+     * getter zwracajacy wartosc String z wartosci long waitingTime
+     * @return czas do klikniecia przycisku
+     */
     public String getShow() {
         show = Long.toString((waitingTime));
         return show;
     }
+
+    /**
+     * metoda wybierajaca randomowy button z klasy Test2
+     * wywolanie runWaitingThread()
+     * dodawnie poszczegolnych wartosci waitingTime do zmiennej help
+     * oraz wywyolanie finishGame z Test2
+     */
 
     @Override
     public void run() {
@@ -38,7 +66,6 @@ public class Test2Gra extends Thread {
             runWaitingThread();
             help = help + waitingTime;
         }
-
         test2.finishGame(getsTime());
     }
 
@@ -55,10 +82,10 @@ public class Test2Gra extends Thread {
 
     }
 
-
-    public boolean isWaitingForClick() {
-        return waitingForClick;
-    }
+    /**
+     * setter ustwiajacy wartosc waitingForClick
+     * @param waitingForClick boolean
+     */
 
     public void setWaitingForClick(boolean waitingForClick) {
         this.waitingForClick = waitingForClick;

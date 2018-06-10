@@ -1,23 +1,21 @@
 package com.example.dominik.alkotest;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.util.Random;
 import java.util.ArrayList;
 
 import static java.lang.Thread.sleep;
 
-
+/**
+ * Klasa odpowiadająca za obsługę test2
+ */
 public class Test2 extends AppCompatActivity {
 
 
@@ -29,6 +27,13 @@ public class Test2 extends AppCompatActivity {
 
 
     private View.OnClickListener clicker = new View.OnClickListener() {
+        /**
+         * funkcja realizujaca gre w test2 sprwadzenie czy nacisniety przycisk jest
+         * wczesniej wybranym przyciskiem oraz zmiana koloru
+         * sleep potrzebny by uniknac konczenia przed pobraniem wyniku z watku do wyswietlenia
+         *
+         * @param v widok
+         */
         @Override
         public void onClick(View v) {
             Button clickedButtonID = findViewById(v.getId());
@@ -37,7 +42,7 @@ public class Test2 extends AppCompatActivity {
                 test2Gra.setWaitingForClick(false);
             }
             try {
-                sleep(100); //zeby nie wywalo przed zakonczeniem watkow
+                sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -75,6 +80,10 @@ public class Test2 extends AppCompatActivity {
 
     }
 
+    /**
+     * Metoda odpowiadająca za wybranie losowego przycisku oraz zapalenie go na inny kolor
+     */
+
     public void chooseRandomButton() {
         int choosenButtonIndex = randomGenerator.nextInt(buttonArrayList.size());
         randomButton = buttonArrayList.get(choosenButtonIndex);
@@ -87,15 +96,25 @@ public class Test2 extends AppCompatActivity {
 
     }
 
-    public void runGame() {
+
+    private void runGame() {
         test2Gra = new Test2Gra(this);
         test2Gra.start();
     }
 
-
+    /**
+     * setter ustawiajacy wartosc na waitingTime
+     * @param waitingTime wartosc ustawiana na waitingTime
+     */
     public void setWaitingTime(long waitingTime) {
         this.waitingTime = waitingTime;
     }
+
+    /**
+     * ustawia result intenta (aktywności) na wartosc String przekazana w funkcji
+     * @param kaka
+     * nastepnie metoda konczy aktwynosc test2
+     */
 
     public void finishGame(String kaka) {
 

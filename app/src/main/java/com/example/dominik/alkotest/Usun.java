@@ -8,18 +8,23 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Klasa odpowiadająca za obsługę usuwanie konta
+ */
+
 public class Usun extends AppCompatActivity {
 
-    String wybor;
+    private String wybor;
+
+    /**
+     * usuwanie wybranego konta
+     *
+     * @param savedInstanceState instncja apk
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +45,11 @@ public class Usun extends AppCompatActivity {
 
     }
 
-    public void spinner() {
+    /**
+     * wypisywanie kont mozliwych do usuniecia
+     */
+
+    protected void spinner() {
 
         List<String> spinnerArray = new ArrayList<>();
         for (String s : fileList()) {

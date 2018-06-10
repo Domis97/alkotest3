@@ -1,9 +1,7 @@
 package com.example.dominik.alkotest;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,17 +11,21 @@ import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Klasa odpowiadająca za logowania oraz porownania wynikow testow
+ */
+
+
 public class Loguj extends AppCompatActivity {
 
-    String wybor;
-    String wynik1;
-    String wynik2;
+    private String wybor;
+    private String wynik1;
+    private String wynik2;
     private long wynik1L;
     private long wynik2L;
     private long wynik;
@@ -44,17 +46,23 @@ public class Loguj extends AppCompatActivity {
         spinner();
         button.setOnClickListener(
                 new Button.OnClickListener() {
+                    /**
+                     * metoda stworzona do porownania wynikow z testu przed i testu po
+                     * porownanie wynikow i koncowe stwierdzenie stanu badanego oraz wyswietlenie tej informacji na ekran
+                     *
+                     * @param v widok
+                     */
                     public void onClick(View v) {
                         profil();
                         wynik1L = Long.valueOf(wynik1);
                         wynik = wynik2L - wynik1L;
                         TextView textView = findViewById(R.id.wynik_koncowy);
-                        if (wynik > 400) {
-                            textView.setText(String.valueOf("Jak Adas na pikniku"));
+                        if (wynik > 500) {
+                            textView.setText(String.valueOf("Mocno pijany"));
                         } else if (wynik > 250) {
-                            textView.setText(String.valueOf("Jak Domis po 100ml"));
+                            textView.setText(String.valueOf("Lekko podpity"));
                         } else {
-                            textView.setText(String.valueOf("Trzezwy jak KaKa"));
+                            textView.setText(String.valueOf("Trzezwy jak dziecko"));
                         }
                     }
                 }
@@ -62,7 +70,11 @@ public class Loguj extends AppCompatActivity {
 
     }
 
-    public void spinner() {
+    /**
+     * wypisanie listy utworonych wczesniej kont
+     */
+
+    private void spinner() {
 
         List<String> spinnerArray = new ArrayList<>();
         for (String s : fileList()) {
@@ -89,7 +101,7 @@ public class Loguj extends AppCompatActivity {
     }
 
 
-    public void profil() {
+    private void profil() {
 
 
         try {
