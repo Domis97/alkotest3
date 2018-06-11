@@ -74,6 +74,11 @@ public class Test2Gra extends Thread {
         waitingForClick = true;
         mStart = System.currentTimeMillis();
         while (waitingForClick) {
+            try {
+                sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
         mEnd = System.currentTimeMillis();
         waitingTime = mEnd - mStart;
